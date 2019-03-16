@@ -1,1 +1,3 @@
+<button *ngIf="!userInfo" type="button" (click)="signInWithGoogle()">sign in with Google</button>
+<button *ngIf="!!userInfo" type="button" (click)="signOut()" >sign out</button>
 {{ message | async | json }}
