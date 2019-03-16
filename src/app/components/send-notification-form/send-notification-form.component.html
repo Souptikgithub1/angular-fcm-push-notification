@@ -1,0 +1,16 @@
+<div *ngFor="let user of users">
+    <button type="button" (click)="selectUser(user)">{{user['name']}}</button>
+    <ul>
+      <li *ngFor="let topic of user['topics']; let i = index" >
+        <button type="button" (click)="selectTopic(topic['topicId'])">Browser {{i+1}}</button>
+      </li>
+    </ul>
+  </div> 
+
+
+
+<form (ngSubmit)="handleSubmit()">
+  <input type="text" name="title" [(ngModel)]="notiTitle" placeholder="Enter title">
+  <input type="text" name="body" [(ngModel)]="body" placeholder="Enter body">
+  <button type="submit">send</button>
+</form>

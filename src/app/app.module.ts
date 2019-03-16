@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { SocialLoginModule, AuthServiceConfig } from "angularx-social-login";
 import { GoogleLoginProvider, FacebookLoginProvider, LinkedInLoginProvider} from "angularx-social-login";
 import { StoreModule } from '@ngrx/store';
 import { topicReducer } from './reducers/topic.reducer';
+import { SendNotificationFormComponent } from './components/send-notification-form/send-notification-form.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 let config = new AuthServiceConfig([
@@ -39,10 +42,13 @@ export function provideConfig() {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SendNotificationFormComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
     SocialLoginModule,
